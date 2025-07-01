@@ -1,14 +1,18 @@
-KubeCI - Automated CI/CD Deployment
+# KubeCI - Automated CI/CD Deployment
 
 A fully functional CI/CD pipeline that automates the containerization, testing, and deployment of a FastAPI application to a local Kubernetes cluster using Jenkins, GitHub Actions, Docker, Helm, and Minikube.
 
-📌 Project Goals
+---
+
+## 📌 Project Goals
 
   - Build a reproducible, local CI/CD setup that mimics real-world deployment practices.
   - Integrate Jenkins and GitHub Actions to create a GitOps-style delivery pipeline.
   - Use Docker and Kubernetes (Minikube) to run a FastAPI app in a containerized microservice.
 
-🔧 Tech Stack
+---
+
+## 🔧 Tech Stack
 
   - FastAPI – Lightweight Python web framework
   - Docker – For containerizing the application
@@ -18,11 +22,15 @@ A fully functional CI/CD pipeline that automates the containerization, testing, 
   - GitHub Actions – To trigger builds via webhooks
   - Ngrok – To expose Jenkins locally for webhook testing
 
-🏗️ Project Architecture
+---
+
+## 🏗️ Project Architecture
 
   ![Architecture](https://github.com/user-attachments/assets/16a68a0b-6a1d-411d-8546-7312a4bafcfa)
 
-✅ Architecture Validation:
+---
+
+## ✅ Architecture Validation:
 
    1. GitHub
     🔄 Used to store the FastAPI app and Helm chart.
@@ -52,7 +60,9 @@ A fully functional CI/CD pipeline that automates the containerization, testing, 
     🚀 The app runs on Minikube and is accessed via kubectl port-forward.
     ✔️ I verified this by accessing localhost:8000/docs.
 
-🧩 Project Structure
+---
+
+## 🧩 Project Structure
 
   ├── app/                        # FastAPI application
   │   ├── main.py
@@ -66,7 +76,9 @@ A fully functional CI/CD pipeline that automates the containerization, testing, 
   ├── Jenkinsfile (optional for scripted pipeline)
   └── README.md
 
-🚀 How It Works
+---
+
+## 🚀 How It Works
 
   - Code Commit: Push code to the GitHub repository.
   - Webhook Trigger: GitHub fires a webhook to Jenkins (via ngrok).
@@ -74,9 +86,11 @@ A fully functional CI/CD pipeline that automates the containerization, testing, 
   - Helm Deploy: Jenkins deploys the image to Kubernetes using Helm.
   - Access App: Exposed on localhost:8000/docs via port-forward.
 
-🧪 Testing the Setup
+---
 
-  # From the root of the repo
+## 🧪 Testing the Setup
+
+  ### From the root of the repo
   docker build -t kubeci-fastapi-app .
   minikube start --driver=docker
   minikube image load kubeci-fastapi-app:latest
@@ -84,25 +98,31 @@ A fully functional CI/CD pipeline that automates the containerization, testing, 
   helm install kubeci ./kubeci
   kubectl get pods
   kubectl port-forward pod/<pod-name> 8000:8000
-  # Visit http://localhost:8000/docs
+  ### Visit http://localhost:8000/docs
 
-💡 Key Highlights
+---
+
+## 💡 Key Highlights
 
   - Helm templates (values.yaml, deployment, service, liveness probes)
   - Port-forwarding FastAPI for local browsing
   - Webhook integration with ngrok and GitHub
   - Jenkins pipeline simulated using local agent
 
-📈 Future Enhancements
+---
+
+## 📈 Future Enhancements
 
   - Add Jenkinsfile for declarative pipeline
   - Automate image pushes to Docker Hub
   - Deploy to real cloud K8s (e.g., EKS, GKE)
   - Add unit testing and reports
 
+---
+
 ## 📞 Credits
 
-This project was built by Siva Ramakrishna Palaparthy as a CI/CD-enabled full-stack portfolio piece to demonstrate end-to-end application design and deployment.
+This project was built by Siva Ramakrishna Palaparthy.
 
 M.S. Computer Science, Syracuse University  
 Email: krishpalaparthy6768@gmail.com
