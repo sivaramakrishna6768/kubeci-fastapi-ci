@@ -100,6 +100,9 @@ A fully functional CI/CD pipeline that automates the containerization, testing, 
   - Deploy to real cloud K8s (e.g., EKS, GKE)
   - Add unit testing and reports
 
-🙌 Author
+## 📞 Credits
 
-Siva Ramakrishna Palaparthy
+This project was built by Siva Ramakrishna Palaparthy as a CI/CD-enabled full-stack portfolio piece to demonstrate end-to-end application design and deployment.
+
+M.S. Computer Science, Syracuse University  
+Email: krishpalaparthy6768@gmail.com
